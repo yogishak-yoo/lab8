@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js" integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .head1 {
+            font-size: 60px;
+            color: 7f5539;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            padding-left: 300px;
+            justify-content: space-evenly
+        }
+
+        .head2 {
+            font-size: 30px;
+            color: 9c6644;
+            font-family: papyrus;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 10px;
+            padding-left: 300px;
+            text-align: center;
+            display: flex;
+            justify-content: space-evenly
+        }
+
+        body {
+            margin: 0 auto;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .menu {
+            position: sticky;
+            background-color: b08968;
+            padding: 10px 10px 10px 10px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .menu a {
+            float: left;
+            color: 04151f;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        footer {
+            width: 100%;
+            bottom: 0;
+
+            background-color: ddb892;
+            color: #081c15;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        i {
+            padding-left: 20px;
+        }
+
+        .userright {
+            float: right;
+        }
+
+        .textdesign {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 30px;
+        }
+
+        img {
+            padding-left: 60px;
+            padding-right: 20px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .list {
+            display: flex;
+            justify-content: space-evenly
+        }
+
+        .d {
+            text-align: center;
+        }
+
+        .table {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body ng-app="routeApp" style="background-color: #3da984;">
+    <header>
+        <!--<img src="logo.png" width="200px" height="140px">-->
+        <div>
+            <table>
+                <th class="head1">Rural To Urban</th>
+                <th class="head2">Wooden Toys</th>
+            </table>
+        </div>
+
+    </header>
+    <nav class="menu" style="background-color: aquamarine;">
+
+        <div>
+            <table class="table">
+                <th>
+                    <a href="#/">Home</a>
+                </th>
+                <th>
+                    <a href="#login">Logout</a>
+                </th>
+                <th class="userright">
+                    <a href="#home"><i class="fa-solid fa-circle-arrow-left  fa-1x"></i></a>
+                </th>
+                <th class="userright">
+                    <a href="#signup"><i class="fa-solid fa-user fa-1x"></i></a>
+                </th>
+            </table>
+
+        </div>
+    </nav>
+
+    <ng-view></ng-view>
+
+    <footer style="background-color: #71c6a8;">
+        Contact Us
+
+        <center>
+
+            <p style="font-size: 20px;">
+                Established in the year 2020 by yo brothers in karnataka
+            <table>
+                <script src="https://kit.fontawesome.com/87da3d24f4.js" crossorigin="anonymous"></script>
+                <tr>
+                    <td>
+                        <a href="https://www.instagram.com/kpsy_9_yogi/"><i
+                                class="fa-brands fa-instagram fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/yogisha-k-86251b24b/"><i
+                                class="fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+                        <a href="https://twitter.com/YogishaK2"><i class="fa-brands fa-twitter fa-2x"></i></a>
+                        <a href="https://t.me/+INspXg9Dprg2MjU1"><i class="fa-brands fa-telegram fa-2x"></i><a></a>
+                    </td>
+                </tr>
+            </table>
+            </p>
+        </center>
+    </footer>
+
+    <script>
+        angular.module("routeApp", ["ngRoute"])
+            .config(function ($routeProvider) {
+                $routeProvider
+                    .when("/", {
+                        templateUrl: "home8.html"
+                    })
+                    .when("/signup", {
+                        templateUrl: "signup8.html"
+                    })
+                    .when("/login", {
+                        templateUrl: "login8.html"
+                    })
+                    .when("/home", {
+                        templateUrl: "home8.html"
+                    })
+            })
+            .config(['$locationProvider', function ($locationProvider) {
+                $locationProvider.hashPrefix('');
+            }])
+    </script>
+</body>
+
+</html>
